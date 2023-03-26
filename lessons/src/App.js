@@ -1,10 +1,19 @@
-import Todo from "./Todo-App/Todo";
+import BasicExample from "./Routers/Home";
+import Music from "./Routers/Music";
+import Blog from "./Routers/Blog";
+
+import { BrowserRouter } from "react-router-dom";
+import { Routes, Route } from "react-router";
 
 function App() {
   return (
-    <div className="App">
-      <Todo/>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/home" element={<BasicExample />} />
+        <Route path="/music" element={<Music />} />
+        <Route path="/blog" element={<Blog/>}/>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
